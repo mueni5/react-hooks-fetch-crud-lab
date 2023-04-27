@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 
 function QuestionList() {
   const [questions, setQuestions] = useState([]);
 
-  useEffect(() => {
+  const useEffect = (() => {
     fetch("http://localhost:4000/questions")
       .then((r) => r.json())
       .then((questions) => {
